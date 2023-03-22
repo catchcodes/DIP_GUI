@@ -37,7 +37,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>5.14.2</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;network;gui;widgets;webchannel;webengine;webenginewidgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -59,6 +59,8 @@
     <LibraryPath>E:\Qt\5.14.2\msvc2017_64\lib;C:\Users\19941\AppData\Local\Programs\Python\Python310\libs;E:\OpenCV\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>E:\Qt\5.14.2\msvc2017_64\include;C:\Users\19941\AppData\Local\Programs\Python\Python310\include;E:\OpenCV\opencv\build\include\opencv2;E:\OpenCV\opencv\build\include;D:\VSFIles\DIP_Project\Head_Files;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Qt\5.14.2\msvc2017_64\lib;C:\Users\19941\AppData\Local\Programs\Python\Python310\libs;E:\OpenCV\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -67,6 +69,16 @@
     <Link>
       <AdditionalDependencies>_tkinter.lib;python3.lib;python310.lib;python310_d.lib;opencv_world470d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>"C:\Users\19941\AppData\Local\Programs\Python\Python310\libs\_tkinter.lib";"C:\Users\19941\AppData\Local\Programs\Python\Python310\libs\python3.lib";"C:\Users\19941\AppData\Local\Programs\Python\Python310\libs\python310_d.lib";"C:\Users\19941\AppData\Local\Programs\Python\Python310\libs\python310.lib";"E:\OpenCV\opencv\build\x64\vc16\lib\opencv_world470d.lib";"E:\Qt\5.14.2\msvc2017_64\lib\Qt5Guid.lib";"E:\Qt\5.14.2\msvc2017_64\lib\Qt5Cored.lib";"E:\Qt\5.14.2\msvc2017_64\lib\Qt5Widgetsd.lib";%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>

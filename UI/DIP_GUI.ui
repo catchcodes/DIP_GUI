@@ -272,17 +272,46 @@
      <string>高通</string>
     </property>
    </widget>
+   <widget class="QSpinBox" name="fc_face">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>440</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>416</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>  face_fc</string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="face">
     <property name="geometry">
      <rect>
       <x>770</x>
-      <y>502</y>
-      <width>75</width>
+      <y>500</y>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>face</string>
+     <string>Face</string>
     </property>
    </widget>
   </widget>

@@ -32,6 +32,6 @@ void GLPF(Mat& gray, Mat& result, int fc);
 void runPython(vector<int>& location_x, vector<int>& location_y, const char* filepath);
 
 // 面部滤波
-void faceFilter(Mat& face, int fc, const char*filepath);
+void faceFilter(Mat& face, int fc, vector<int>& location_x, vector<int>& location_y);
 
 #endif

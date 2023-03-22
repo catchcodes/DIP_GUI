@@ -4,6 +4,7 @@
 #include "ui_DIP_GUI.h"
 #include <opencv2/core/mat.hpp>
 #include <string.h>
+#include <vector>
 
 using cv::Mat;
 using std::string;
@@ -16,9 +17,15 @@ public:
     DIP_GUI(QWidget *parent = nullptr);
     Mat originImage;
     Mat processedImage;
-    int fc;
+    int fci;
+    int fcb;
+    int fcg;
+    int fcf;
     bool highpass;
     string filepath;
+    string oldFilePath;
+    std::vector<int> location_x;
+    std::vector<int> location_y;
 
 private:
     Ui::DIP_GUIClass ui;

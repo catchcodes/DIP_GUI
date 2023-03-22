@@ -1,17 +1,11 @@
 #include "function.h"
 
-#define PY_SSIZE_T_CLEAN
 
 using namespace std;
 using namespace cv;
 
-void faceFilter(Mat& face, int fc, const char*filepath)
+void faceFilter(Mat& face, int fc, vector<int>& location_x, vector<int>& location_y)
 {
-    // 运行face.py得到特征点位置
-    vector<int> location_x;
-    vector<int> location_y;
-    runPython(location_x, location_y, filepath);
-
     int numOfFace = location_x.size() / 81;
     if (numOfFace == 0)
         return;

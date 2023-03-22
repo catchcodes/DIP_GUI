@@ -8,23 +8,34 @@
 #include <qmovie.h>
 #include <qspinbox.h>
 
+
+#define PY_SSIZE_T_CLEAN
+
 using namespace cv;
 
 DIP_GUI::DIP_GUI(QWidget *parent)
   : QMainWindow(parent),
-    fc(100),
-    highpass(false)
+    fci(100),
+    fcb(100),
+    fcg(100),
+    fcf(100),
+    highpass(false),
+    filepath("C:\\Users\\19941\\Pictures\\i\\shogun_1.jpg")
 {   
     this->setAcceptDrops(true);
     ui.setupUi(this);
-    ui.fc_i->setValue(fc);
-    ui.fc_b->setValue(fc);
-    ui.fc_g->setValue(fc);
+
+    //ui.originImg->setScaledContents(true);
+    //ui.processImg->setScaledContents(true);
+    ui.fc_i->setValue(fci);
+    ui.fc_b->setValue(fcb);
+    ui.fc_g->setValue(fcg);
+    ui.fc_face->setValue(fcf);
     // editingFinished信号下也可以正常使用上下按钮
     ui.fc_i->setMouseTracking(false);
     ui.fc_i->setMouseTracking(false);
     ui.fc_i->setMouseTracking(false);
-
+    ui.fc_face->setMouseTracking(false);
     // 连接信号与槽函数
     connect(ui.histbtn, &QPushButton::clicked, this, &DIP_GUI::hist);
     connect(ui.laplacebtn, &QPushButton::clicked, this, &DIP_GUI::laplace);
@@ -32,11 +43,10 @@ DIP_GUI::DIP_GUI(QWidget *parent)
     connect(ui.blpfbtn, &QPushButton::clicked, this, &DIP_GUI::butter);
     connect(ui.glpfbtn, &QPushButton::clicked, this, &DIP_GUI::gauss);
     connect(ui.face, &QPushButton::clicked, this, &DIP_GUI::fac);
-    //connect(ui.high, &QRadioButton::isChecked, this, [&]() {highpass = 1; });
-    //connect(ui.low, &QRadioButton::isChecked, this, [&]() {highpass = 0; });
-    connect(ui.fc_i, &QSpinBox::editingFinished, this, [&]() {fc = ui.fc_i->value(); });
-    connect(ui.fc_b, &QSpinBox::editingFinished, this, [&]() {fc = ui.fc_b->value(); });
-    connect(ui.fc_g, &QSpinBox::editingFinished, this, [&]() {fc = ui.fc_g->value(); });
+    connect(ui.fc_face, &QSpinBox::editingFinished, this, [&]() {fcf = ui.fc_face->value(); });
+    connect(ui.fc_i, &QSpinBox::editingFinished, this, [&]() {fci = ui.fc_i->value(); });
+    connect(ui.fc_b, &QSpinBox::editingFinished, this, [&]() {fcb = ui.fc_b->value(); });
+    connect(ui.fc_g, &QSpinBox::editingFinished, this, [&]() {fcg = ui.fc_g->value(); });
 }
 
 void DIP_GUI::dragEnterEvent(QDragEnterEvent* event)
@@ -132,21 +142,19 @@ void DIP_GUI::ideal()
 {
     originImage = imread(filepath);
     int channels = originImage.channels();
+
     Mat imageRGB[3];
     // 分离scrImage的三个Channels到imageRGB
     split(originImage, imageRGB);
-
     highpass = true ? ui.high->isChecked() : false;
-
     // 分别进行理想低/高通滤波
     for (int i = 0; i < channels; i++)
-        ILPF(imageRGB[i], imageRGB[i], fc, highpass);
+        ILPF(imageRGB[i], imageRGB[i], fci, highpass);
 
     // 合并通道
     merge(imageRGB, 3, originImage);
     cvtColor(originImage, processedImage, COLOR_BGR2RGB);
     processedImage.convertTo(processedImage, CV_8U, 255);
-
     QImage pImage = QImage((const unsigned char*)(processedImage.data), processedImage.cols, processedImage.rows, processedImage.step, QImage::Format_RGB888);
     pImage.scaled(ui.processImg->size(), Qt::KeepAspectRatio);
     ui.processImg->setScaledContents(true);
@@ -163,7 +171,7 @@ void DIP_GUI::butter()
 
     // 分别进行巴特沃斯低通滤波
     for (int i = 0; i < channels; i++)
-        BLPF(imageRGB[i], imageRGB[i], fc);
+        BLPF(imageRGB[i], imageRGB[i], fcb);
 
     // 合并通道
     merge(imageRGB, 3, originImage);
@@ -186,7 +194,7 @@ void DIP_GUI::gauss()
 
     // 分别进行高斯低通滤波
     for (int i = 0; i < channels; i++)
-        GLPF(imageRGB[i], imageRGB[i], fc);
+        GLPF(imageRGB[i], imageRGB[i], fcg);
 
     // 合并通道
     merge(imageRGB, 3, originImage);
@@ -203,7 +211,19 @@ void DIP_GUI::gauss()
 void DIP_GUI::fac()
 {
     originImage = imread(filepath);
-    faceFilter(originImage, fc, filepath.c_str());
+    // 防止face按键多次按下导致Python报错
+    if (filepath != oldFilePath)
+    {
+        oldFilePath = filepath;
+        // 运行face.py得到特征点位置
+        runPython(location_x, location_y, filepath.c_str());
+        faceFilter(originImage, fcf, location_x, location_y);
+    }
+    else
+    {
+        originImage = imread(filepath);
+        faceFilter(originImage, fcf, location_x, location_y);
+    }
 
     cvtColor(originImage, processedImage, COLOR_BGR2RGB);
     //processedImage.convertTo(processedImage, CV_8U, 255);
