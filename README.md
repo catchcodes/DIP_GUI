@@ -17,7 +17,7 @@
 ```
 
 ### Demo
-![Demo](../DIP_GUI/Resource_Files/demo.gif)
+![Demo](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/demo.gif)
 
 ### Requirements
 
@@ -351,4 +351,4 @@ Codes of Digital-Image-Processing homework
 ```
 
 ### V我50
-![ ](../DIP_GUI/Resource_Files/wechatPay.png)
+![ ](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/wechatPay.png "Vivo50")
