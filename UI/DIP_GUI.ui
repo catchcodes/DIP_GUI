@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DIP_GUIClass</class>
+ <widget class="QMainWindow" name="DIP_GUIClass">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>916</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>DIP_GUI</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resource_Files/DIP_GUI.qrc">
+    <normaloff>:/DIP_GUI/genshin/yuanshi.jpg</normaloff>:/DIP_GUI/genshin/yuanshi.jpg</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>200</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="originImg">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>721</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resource_Files/DIP_GUI.qrc">:/DIP_GUI/C:/Users/19941/Pictures/i/shogun_1.jpg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="processImg">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>10</y>
+      <width>701</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../Resource_Files/DIP_GUI.qrc">:/DIP_GUI/C:/Users/19941/Pictures/i/keqing_1.jpg</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="histbtn">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>800</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>直方图均衡化</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource_Files/DIP_GUI.qrc">
+      <normaloff>:/DIP_GUI/genshin/al.jpg</normaloff>:/DIP_GUI/genshin/al.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ilpfbtn">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>800</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>理想滤波器</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource_Files/DIP_GUI.qrc">
+      <normaloff>:/DIP_GUI/genshin/hemen.jpg</normaloff>:/DIP_GUI/genshin/hemen.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="blpfbtn">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>800</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>巴特沃斯低通</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource_Files/DIP_GUI.qrc">
+      <normaloff>:/DIP_GUI/genshin/zm.jpg</normaloff>:/DIP_GUI/genshin/zm.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="laplacebtn">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>800</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>拉普拉斯锐化</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource_Files/DIP_GUI.qrc">
+      <normaloff>:/DIP_GUI/genshin/ax.jpg</normaloff>:/DIP_GUI/genshin/ax.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="glpfbtn">
+    <property name="geometry">
+     <rect>
+      <x>1370</x>
+      <y>800</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>高斯低通</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../Resource_Files/DIP_GUI.qrc">
+      <normaloff>:/DIP_GUI/genshin/tm.jpg</normaloff>:/DIP_GUI/genshin/tm.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="fc_i">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>810</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="fc_b">
+    <property name="geometry">
+     <rect>
+      <x>1241</x>
+      <y>811</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="fc_g">
+    <property name="geometry">
+     <rect>
+      <x>1520</x>
+      <y>810</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="suffix">
+     <string/>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="low">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>870</y>
+      <width>86</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>低通</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="high">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>870</y>
+      <width>86</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>高通</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="face">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>502</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>face</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="font">
+    <font>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../Resource_Files/DIP_GUI.qrc"/>
+ </resources>
+ <connections/>
+</ui>

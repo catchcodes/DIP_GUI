@@ -1,0 +1,24 @@
+<RCC>
+  <qresource prefix="/DIP_GUI">
+    <file>C:/Users/19941/Pictures/i/keqing_1.jpg</file>
+    <file>C:/Users/19941/Pictures/i/shogun_1.jpg</file>
+    <file>C:/Users/19941/Pictures/i/paimon_2.jpg</file>
+    <file>C:/Users/19941/Pictures/i/paimon_3.jpg</file>
+    <file>genshin/al.jpg</file>
+    <file>genshin/ax.jpg</file>
+    <file>genshin/ganyu.jpg</file>
+    <file>genshin/hemen.jpg</file>
+    <file>genshin/keqing.jpg</file>
+    <file>genshin/kokomi.jpg</file>
+    <file>genshin/miko.jpg</file>
+    <file>genshin/Paimon.jpg</file>
+    <file>genshin/shogun.jpg</file>
+    <file>genshin/shogun1.jpg</file>
+    <file>genshin/tm.jpg</file>
+    <file>genshin/yuanshi.jpg</file>
+    <file>genshin/zm.jpg</file>
+  </qresource>
+  <qresource prefix="/LOGO">
+    <file>C:/Users/19941/Pictures/logo.png</file>
+  </qresource>
+</RCC>
