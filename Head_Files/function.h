@@ -29,9 +29,9 @@ void BLPF(Mat& gray, Mat& result, int fc, int level=2);
 void GLPF(Mat& gray, Mat& result, int fc);
 
 // 运行python程序
-void runPython(vector<int>& location_x, vector<int>& location_y);
+void runPython(vector<int>& location_x, vector<int>& location_y, const char* filepath);
 
 // 面部滤波
-void faceFilter(Mat& face, int fc);
+void faceFilter(Mat& face, int fc, const char*filepath);
 
 #endif

@@ -5,12 +5,12 @@
 using namespace std;
 using namespace cv;
 
-void faceFilter(Mat& face, int fc)
+void faceFilter(Mat& face, int fc, const char*filepath)
 {
     // 运行face.py得到特征点位置
     vector<int> location_x;
     vector<int> location_y;
-    runPython(location_x, location_y);
+    runPython(location_x, location_y, filepath);
 
     int numOfFace = location_x.size() / 81;
     if (numOfFace == 0)
@@ -46,8 +46,5 @@ void faceFilter(Mat& face, int fc)
             re.copyTo(face(rightEyeRect));
             mo.copyTo(face(mouthRect));
         }
-        
-    }
-    
-
+    }    
 }

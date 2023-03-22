@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void runPython(vector<int>& location_x, vector<int>& location_y)
+void runPython(vector<int>& location_x, vector<int>& location_y, const char* filepath)
 {
     // 设置python.exe的路径
     Py_SetPythonHome(L"C:\\Users\\19941\\AppData\\Local\\Programs\\Python\\Python310");
@@ -30,9 +30,9 @@ void runPython(vector<int>& location_x, vector<int>& location_y)
         {
             // pFunc = PyObject_GetAttrString(pModule, "find_face");//这里是要调用的函数名
             pFuncl = PyObject_GetAttrString(pModule, "find_face_landmarks");
-
+            
             // 不能用C++的String，存在格式上的问题！
-            PyObject* args = Py_BuildValue("(s)", ".\\Resource_Files\\1.jpg");//给python函数参数赋值
+            PyObject* args = Py_BuildValue("(s)", filepath);//给python函数参数赋值
             // PyObject* face = PyObject_CallObject(pFunc, args);  // 面部矩形框
             PyObject* mark = PyObject_CallObject(pFuncl, args);    // 调用函数，获取特征点列表
             PyObject* x = nullptr;

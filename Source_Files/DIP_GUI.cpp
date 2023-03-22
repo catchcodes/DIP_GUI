@@ -203,7 +203,7 @@ void DIP_GUI::gauss()
 void DIP_GUI::fac()
 {
     originImage = imread(filepath);
-    faceFilter(originImage, fc);
+    faceFilter(originImage, fc, filepath.c_str());
 
     cvtColor(originImage, processedImage, COLOR_BGR2RGB);
     //processedImage.convertTo(processedImage, CV_8U, 255);
