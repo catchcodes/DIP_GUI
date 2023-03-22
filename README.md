@@ -3,7 +3,7 @@
 
 [![ ](https://img.shields.io/badge/%E6%AC%A7%E9%98%B3%E6%96%8C-catchcodes-brightgreen "my_icon")](https://github.com/catchcodes)
 [![ ](https://img.shields.io/badge/QQ-%F0%9F%8C%9E%20-yellowgreen "扣扣")](https://wpa.qq.com/msgrd?v=3&uin=1994143440&site=qq&menu=yes&jumpflag=1)
-![Github stars](https://img.shields.io/github/stars/catchcodes/DIP_Cpp.svg)
+![Github stars](https://img.shields.io/github/stars/catchcodes/DIP_GUI.svg)
 
 </br>
 
