@@ -41,7 +41,7 @@ Using [Opencv 4.7.0](https://opencv.org/releases/)&ensp;;&ensp;[Qt 5.14.2](https
 > * 人脸特征点检测 : 
 > 1. 调用Dlib的HOG人脸检测(将图像分割成一些 16×16 像素的小方块，计算指向性最强的梯度方向)
 > 2. 用训练好的81个人脸关键点位置模型去寻找人脸中的81个特征点
-> ![ ](Resource_Files/屏幕截图%202023-03-19%20165113.png)
+> ![ ](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-19%20165113.png)
 > </br>
 > **UI部分**
 > 1、用Qt Designer设计好初步界面
