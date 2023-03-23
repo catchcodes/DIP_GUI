@@ -56,6 +56,7 @@ DFT: $ F(u,v) = \frac{1}{MN}\displaystyle \sum_{x=0}^{M-1} \sum_{y=0}^{N-1}f(x,y
 **UI部分**
 </br>
 1、用Qt Designer设计好初步界面
+</br>
 2、连接Button、SpinBox等信号与相应的槽函数，信号产生调用对应槽函数，在槽函数中进行相关功能函数的调用
 
 
