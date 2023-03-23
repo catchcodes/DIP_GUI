@@ -9,12 +9,12 @@ using std::map;
 void ILPF(Mat& gray, Mat& result, int fc, bool hpass)
 {
 	// 扩展图像矩阵，为2，3，5的倍数时运算速度快
-	int m = cv:: getOptimalDFTSize(gray.rows);
-	int n = cv::getOptimalDFTSize(gray.cols);
+	// int m = cv:: getOptimalDFTSize(gray.rows);
+	// int n = cv::getOptimalDFTSize(gray.cols);
 	Mat padded;
 	// 零填充
-	cv::copyMakeBorder(gray, padded, 0, m - gray.rows, 0, n - gray.cols, cv::BORDER_CONSTANT);
-	padded.convertTo(padded, CV_32FC1);
+	// cv::copyMakeBorder(gray, padded, 0, m - gray.rows, 0, n - gray.cols, cv::BORDER_CONSTANT);
+	gray.convertTo(padded, CV_32FC1);
 	int row = padded.rows;
 	int col = padded.cols;
 	if (fc > MIN(row, col))	
