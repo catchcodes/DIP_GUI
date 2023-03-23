@@ -319,6 +319,7 @@ Codes of Digital-Image-Processing homework
 ### ToDoList
 - [ ] 人脸部分具体处理 
 - [ ] 人脸眼部、鼻部、唇部、发际线进行可选性处理
+- [ ] 对视频中的人脸进行滤波
     
 ### Bug Buddha
 
