@@ -82,8 +82,5 @@
     <Image Include="Resource_Files\wechatPay.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="wechatPay.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>

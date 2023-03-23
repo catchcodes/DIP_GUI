@@ -24,6 +24,10 @@
 This project is based on [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/) IDE</br>
 Using [Opencv 4.7.0](https://opencv.org/releases/)&ensp;;&ensp;[Qt 5.14.2](https://download.qt.io/archive/qt/5.14/5.14.2/)&ensp;;&ensp;[Qt VS Tool 2.10.1](https://www.qt.io/blog/qt-vs-tools-for-visual-studio-2022)&ensp;;&ensp;[Python 3.10](https://www.python.org/downloads/)
 
+### Map
+
+
+
 ### Function Codes
 Codes of Digital-Image-Processing homework
 
@@ -319,6 +323,7 @@ Codes of Digital-Image-Processing homework
 ### ToDoList
 - [ ] 人脸部分具体处理 
 - [ ] 人脸眼部、鼻部、唇部、发际线进行可选性处理
+- [ ] 对视频中的人脸进行滤波
     
 ### Bug Buddha
 
