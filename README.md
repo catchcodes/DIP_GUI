@@ -27,25 +27,32 @@ Using [Opencv 4.7.0](https://opencv.org/releases/)&ensp;;&ensp;[Qt 5.14.2](https
 ### Description
 ![ depict](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/depict.png)
 </br>
-> **功能函数**
-> * 直方图均衡化 : $ s_k = \displaystyle \sum_{j=0}^{k}\frac{n_j}{n}$ 
->  累计频率 哪些灰度数量多，映射曲线越陡峭，均衡后越均匀
-> </br>
-> * 拉普拉斯锐化 : $ g(x,y) = f(x,y)+[8\cdot f(x,y)-\displaystyle \sum_{D8}f(i,j)] $
-> 当邻域中心像素灰度低于它所在的领域内其它像素的平均灰度时，此中心像素的灰度应被进一步降低，当邻域中心像素灰度高于它所在的邻域内其它像素的平均灰度时，此中心像素的灰度应被进一步提高
-> </br>
-> * 频域滤波 : 
-> DFT: $ F(u,v) = \frac{1}{MN}\displaystyle \sum_{x=0}^{M-1} \sum_{y=0}^{N-1}f(x,y)\exp\{-j2\pi (\frac{ux}{M}+\frac{vy}{N}) \}$
-> </br>
-> **Python部分**
-> * 人脸特征点检测 : 
-> 1. 调用Dlib的HOG人脸检测(将图像分割成一些 16×16 像素的小方块，计算指向性最强的梯度方向)
-> 2. 用训练好的81个人脸关键点位置模型去寻找人脸中的81个特征点
-> ![ ](Resource_Files/屏幕截图%202023-03-19%20165113.png)
-> </br>
-> **UI部分**
-> 1、用Qt Designer设计好初步界面
-> 2、连接Button、SpinBox等信号与相应的槽函数，信号产生调用对应槽函数，在槽函数中进行相关功能函数的调用
+**功能函数**
+* 直方图均衡化 : $ s_k = \displaystyle \sum_{j=0}^{k}\frac{n_j}{n}$ 
+ 累计频率 哪些灰度数量多，映射曲线越陡峭，均衡后越均匀
+</br>
+
+* 拉普拉斯锐化 : $ g(x,y) = f(x,y)+[8\cdot f(x,y)-\displaystyle \sum_{D8}f(i,j)] $
+当邻域中心像素灰度低于它所在的领域内其它像素的平均灰度时，此中心像素的灰度应被进一步降低，当邻域中心像素灰度高于它所在的邻域内其它像素的平均灰度时，此中心像素的灰度应被进一步提高
+</br>
+
+* 频域滤波 : 
+DFT: $ F(u,v) = \frac{1}{MN}\displaystyle \sum_{x=0}^{M-1} \sum_{y=0}^{N-1}f(x,y)\exp\{-j2\pi (\frac{ux}{M}+\frac{vy}{N}) \}$
+</br>
+
+**Python部分**
+
+* 人脸特征点检测 : 
+1. 调用Dlib的HOG人脸检测(将图像分割成一些 16×16 像素的小方块，计算指向性最强的梯度方向)
+2. 用训练好的81个人脸关键点位置模型去寻找人脸中的81个特征点
+
+![mark](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-19%20165113.png)
+ 
+</br>
+
+**UI部分**
+1、用Qt Designer设计好初步界面
+2、连接Button、SpinBox等信号与相应的槽函数，信号产生调用对应槽函数，在槽函数中进行相关功能函数的调用
 
 
 ### Function Codes
