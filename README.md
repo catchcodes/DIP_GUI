@@ -387,5 +387,3 @@ Codes of Digital-Image-Processing homework
                   V我50
 ```
 
-### V我50
-![ ](https://github.com/catchcodes/DIP_GUI/blob/master/Resource_Files/wechatPay.png "Vivo50")
